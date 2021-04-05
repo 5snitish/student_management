@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
     'rest_auth',
     'rest_auth.registration',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
+    'django_rest_passwordreset',
     'users',
 ]
 
@@ -67,6 +67,9 @@ REST_FRAMEWORK = {
         
     ]
 }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
 
@@ -100,7 +103,7 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': 'student_management1',
+'NAME': 'student_management2',
 'USER': 'postgres',
 'PASSWORD': 'Snitish@515',
 'HOST': 'localhost',

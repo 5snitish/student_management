@@ -19,8 +19,13 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # to login and get token
     path('api/token/',  TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # to refresh the token
     path('api/token/refresh/',  TokenRefreshView.as_view(), name='token_refresh'),
- 
+    # to reset the password 
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
+    
+   # base api url
     path('api/', include('users.urls', namespace='api')),
 ]
